@@ -30,12 +30,9 @@ public class EqualHalvesLinkedList2 {
 
 		while (second != null) {
 			first = first.next;
-
-			
 			second = second.next;
 			if(second == null) break;
 			second = second.next;
-			
 		}
 
 		System.out.println("el corte es en: " + first.value);
