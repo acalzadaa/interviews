@@ -20,19 +20,18 @@ public class LineIntersectEq {
 		System.out.println(eq1.length + " " + eq2.length);
 
 		double x1 = (-1 * new Double(eq1[1])) / new Double(eq1[0]);
-		double y1 = new Double(eq1[0]);
+		double y1 = Double.parseDouble(eq1[0]);
 		System.out.println(x1 + " a " + y1);
 
 		double x2 = (-1 * new Double(eq2[1])) / new Double(eq2[0]);
-		double y2 = new Double(eq2[0]);
+		double y2 = Double.parseDouble(eq2[0]);
 		System.out.println(x2 + " a " + y2);
 
 		System.out.println((y1 / x1) + " m " + (-1 * (y2 / x2)));
 
-		if ((y1 / x1) == (-1 * (y2 / x2)))
-			return true;
+		return ((y1 / x1) == (-1 * (y2 / x2))) ? true : false;
 
-		return false;
+
 	}
 
 }

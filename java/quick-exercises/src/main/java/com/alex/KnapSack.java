@@ -1,4 +1,5 @@
 package com.alex;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -35,7 +36,7 @@ public class KnapSack {
 			radioVsPeso.put(items[i][1] / items[i][0], items[i][0]);
 		}
 
-		List<Integer> mapKeys = new ArrayList<Integer>(radioVsPeso.keySet());
+		List<Integer> mapKeys = new ArrayList<>(radioVsPeso.keySet());
 		Collections.sort(mapKeys, Collections.reverseOrder());
 
 		int valor = 0;
@@ -43,8 +44,8 @@ public class KnapSack {
 		int pesoAcumulado = 0;
 		int valorAcumulado = 0;
 
-		for (Iterator iterator = mapKeys.iterator(); iterator.hasNext();) {
-			Integer radio = (Integer) iterator.next();
+		for (Iterator<Integer> iterator = mapKeys.iterator(); iterator.hasNext();) {
+			Integer radio = iterator.next();
 			// add value hasta que no quepa mas
 			peso = radioVsPeso.get(radio);
 			valor = pesoVsValor.get(peso);

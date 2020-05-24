@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class EqualHalvesLinkedList {
 
 	public static void main(String[] args) {
-		LinkedList<Integer> list = new LinkedList<Integer>();
+		LinkedList<Integer> list = new LinkedList<>();
 		
 		list.add(1);
 		list.add(2);
@@ -29,8 +29,8 @@ public class EqualHalvesLinkedList {
 		long secondSize = list.size() - firstSize;
 		
 		
-		LinkedList<Integer> list1 = new LinkedList<Integer>();
-		LinkedList<Integer> list2 = new LinkedList<Integer>();
+		LinkedList<Integer> list1 = new LinkedList<>();
+		LinkedList<Integer> list2 = new LinkedList<>();
 		
 		System.out.println("List size: " + list.size() + " 1:" + list1.size() + " 2:" + list2.size());
 		for (int i = 0; i < firstSize; i++) {
@@ -47,11 +47,11 @@ public class EqualHalvesLinkedList {
 
 		}
 		
-		for (Iterator iterator = list1.iterator(); iterator.hasNext();) {
+		for (Iterator<Integer> iterator = list1.iterator(); iterator.hasNext();) {
 			System.out.println("1: " + iterator.next());
 		}
 		
-		for (Iterator iterator = list2.iterator(); iterator.hasNext();) {
+		for (Iterator<Integer> iterator = list2.iterator(); iterator.hasNext();) {
 			System.out.println("2: " + iterator.next());
 			
 		}

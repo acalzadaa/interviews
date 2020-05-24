@@ -1,4 +1,5 @@
 package com.alex;
+
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -11,7 +12,7 @@ public class UserInput {
 		public void add(Character c) {
 			listOfNames.add(c);
 		}
-		
+
 		public String getValue() {
 			return listOfNames.stream().map(String::valueOf).collect(Collectors.joining());
 		}
@@ -46,7 +47,7 @@ public class UserInput {
 		input.add('1');
 		input.add('1');
 		input.add('1');
-        System.out.println(input.getValue());
+		System.out.println(input.getValue());
 
 	}
 }

@@ -44,11 +44,8 @@ public class LineIntersection {
 		System.out.println("x2: " + x2 + " y2: " + y2 + " m: " + eqLine2);
 
 
-		if (eqLine1 == (-1*eqLine2)) {
-			return true;
-		} else {
-			return false;
-		}
+		return (eqLine1 == (-1*eqLine2)) ? true : false;
+
 
 	}
 

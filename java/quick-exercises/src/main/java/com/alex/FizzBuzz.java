@@ -25,7 +25,7 @@ public class FizzBuzz {
 				fizzbuzzArray[j - 1] = "FizzBuzz";
 			}
 			if (j % 5 != 0 && j % 3 != 0) {
-				fizzbuzzArray[j - 1] = new Integer(j).toString();
+				fizzbuzzArray[j - 1] = Integer.toString(j);
 			}
 		}
 

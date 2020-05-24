@@ -28,8 +28,8 @@ public class ConsecutiveNumbers {
 		int acum = 0;
 		int maxAcum = 0;
 		
-		for (Iterator iterator = orderedNumbers.iterator(); iterator.hasNext();) {
-			Integer numberList = (Integer) iterator.next();
+		for (Iterator<Integer> iterator = orderedNumbers.iterator(); iterator.hasNext();) {
+			Integer numberList = iterator.next();
 
 			//primer numero 1
 			if(secuential == -1) {

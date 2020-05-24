@@ -20,7 +20,7 @@ public class Anagrams {
 		if (string.isEmpty() || string2.isEmpty())
 			return true;
 
-		HashMap<Character, Integer> map1 = new HashMap<Character, Integer>();
+		HashMap<Character, Integer> map1 = new HashMap<>();
 		for (Character character : string.toCharArray()) {
 			character = Character.toLowerCase(character);
 			if (map1.containsKey(character)) {
@@ -30,7 +30,7 @@ public class Anagrams {
 			}
 		}
 
-		HashMap<Character, Integer> map2 = new HashMap<Character, Integer>();
+		HashMap<Character, Integer> map2 = new HashMap<>();
 		for (Character character : string2.toCharArray()) {
 			character = Character.toLowerCase(character);
 
@@ -49,7 +49,7 @@ public class Anagrams {
 				return false;
 			}
 
-			if (map1.get(chars3) != map2.get(chars3)) {
+			if (!map1.get(chars3).equals(map2.get(chars3))) {
 				return false;
 			}
 		}
