@@ -1,5 +1,7 @@
-package com.alex;
+package com.alex.anagrams;
+
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 /*
  * Given two strings find out if they're anagrams
@@ -9,19 +11,16 @@ import java.util.HashMap;
 
 public class Anagrams {
 
-	public static void main(String[] args) {
+	boolean isAnagram(String first, String second) {
 
-		boolean returnValue = isAnagram("Abba", "baab");
-		System.out.println(returnValue);
-	}
+		if (first.isEmpty() || second.isEmpty())
+			return false;
 
-	private static boolean isAnagram(String string, String string2) {
-
-		if (string.isEmpty() || string2.isEmpty())
-			return true;
+		if (Pattern.compile("\\d").matcher(first).find() || Pattern.compile("\\d").matcher(second).find())
+			return false;
 
 		HashMap<Character, Integer> map1 = new HashMap<>();
-		for (Character character : string.toCharArray()) {
+		for (Character character : first.toCharArray()) {
 			character = Character.toLowerCase(character);
 			if (map1.containsKey(character)) {
 				map1.put(character, map1.get(character) + 1);
@@ -31,7 +30,7 @@ public class Anagrams {
 		}
 
 		HashMap<Character, Integer> map2 = new HashMap<>();
-		for (Character character : string2.toCharArray()) {
+		for (Character character : second.toCharArray()) {
 			character = Character.toLowerCase(character);
 
 			if (map2.containsKey(character)) {
