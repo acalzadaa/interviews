@@ -1,13 +1,11 @@
 package com.alex;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TwoSum {
 	public static int[] findTwoSum(int[] list, int sum) {
 
 		for (int i = 0, diff = 0; i < list.length; i++) {
 
-			diff = sum - list[i];
+			diff += sum - list[i];
 
 			if (diff > 0) {
 

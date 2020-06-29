@@ -4,10 +4,11 @@ package com.alex.anagrams;
  *  and RETURN a BOOLEAN
  *  
  *  - ANAGRAM is when the TWO strings have the SAME letters but in different order
+ *  - ONLY ALPHANUMERIC, NO DIGITS
  *  - IGNORE THE CASE!!
  *  
  */
-public class Client {
+public class AnagramsClient {
 
 	public static void main(String[] args) {
 
