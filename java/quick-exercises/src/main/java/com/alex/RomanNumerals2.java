@@ -1,13 +1,9 @@
 package com.alex;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
 
 public class RomanNumerals2 {
 
@@ -22,9 +18,9 @@ public class RomanNumerals2 {
 
 		int numeroArabigoRestante = numeroArabigo;
 
-		List<String> romanString = new ArrayList<String>();
+		List<String> romanString = new ArrayList<>();
 
-		Map<String, Integer> romanNumerals = new HashMap<String, Integer>();
+		Map<String, Integer> romanNumerals = new HashMap<>();
 		romanNumerals.put("M", 1000);
 		romanNumerals.put("D", 500);
 		romanNumerals.put("C", 100);
@@ -38,44 +34,55 @@ public class RomanNumerals2 {
 		int romanDigitCount = 0;
 
 		// 333
-		for (int index = 0; index < romanArray.length; index += 2) {
+		int index = 0;
+		while (index < romanArray.length)
+		{
 			String romanDigit = romanArray[index];
 			int romanIntValue = romanNumerals.get(romanDigit);
 
 			romanDigitCount = numeroArabigoRestante / romanIntValue;
 			numeroArabigoRestante -= romanIntValue * romanDigitCount;
-			
-			
-			if (romanDigitCount == 9) {
+
+
+			if (romanDigitCount == 9)
+			{
 				romanString.add(romanArray[index]);
 				romanString.add(romanArray[index - 2]);
+				index += 2;
 				continue;
 			}
-			if (romanDigitCount > 3) {
+			if (romanDigitCount > 3)
+			{
 
-				if (romanDigitCount == 4) {
+				if (romanDigitCount == 4)
+				{
 					romanString.add(romanArray[index]);
 					romanString.add(romanArray[index - 1]);
+					index += 2;
 					continue;
 				}
-				if (romanDigitCount >= 5) {
-					romanString.add(romanArray[index - 1]);
+				romanString.add(romanArray[index - 1]);
 
-					for (int normalIndex = 0; normalIndex < romanDigitCount - 5; normalIndex++) {
-						romanString.add(romanArray[index]);
-					}
-					continue;
+				for (int normalIndex = 0; normalIndex < romanDigitCount - 5; normalIndex++)
+				{
+					romanString.add(romanArray[index]);
 				}
+				index += 2;
+				continue;
 
 			}
-			if (romanDigitCount > 0) {
+			if (romanDigitCount > 0)
+			{
 
-				for (int normalIndex = 0; normalIndex < romanDigitCount; normalIndex++) {
+				for (int normalIndex = 0; normalIndex < romanDigitCount; normalIndex++)
+				{
 					romanString.add(romanArray[index]);
 				}
+				index += 2;
 				continue;
 			}
 
+			index += 2;
 		}
 
 		return romanString.toString();

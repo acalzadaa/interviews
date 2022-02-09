@@ -14,7 +14,6 @@ package com.alex.persist;
 public class PersistClient {
 
 	public static void main(String[] args) {
-		new Persist();
 		System.out.println(Persist.persistence(999));
 	}
 

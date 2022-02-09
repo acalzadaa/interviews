@@ -3,7 +3,12 @@ import java.util.LinkedList;
 
 public class TrainComposition {
 
-	private LinkedList<Integer> trainWagon = new LinkedList<Integer>();
+    /*
+    A train can add
+
+     */
+
+	private final LinkedList<Integer> trainWagon = new LinkedList<>();
 	
     public void attachWagonFromLeft(int wagonId) {
     	trainWagon.addFirst(wagonId);
@@ -27,6 +32,8 @@ public class TrainComposition {
     }
 
     public static void main(String[] args) {
+
+
         TrainComposition train = new TrainComposition();
         train.attachWagonFromLeft(7);
         train.attachWagonFromLeft(13);

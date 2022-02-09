@@ -1,5 +1,7 @@
 package com.alex;
 
+import static java.lang.Double.parseDouble;
+
 public class LineIntersectEq {
 
 	public static void main(String[] args) {
@@ -19,17 +21,17 @@ public class LineIntersectEq {
 
 		System.out.println(eq1.length + " " + eq2.length);
 
-		double x1 = (-1 * new Double(eq1[1])) / new Double(eq1[0]);
-		double y1 = Double.parseDouble(eq1[0]);
+		double x1 = -1 * parseDouble(eq1[1]) / parseDouble(eq1[0]);
+		double y1 = parseDouble(eq1[0]);
 		System.out.println(x1 + " a " + y1);
 
-		double x2 = (-1 * new Double(eq2[1])) / new Double(eq2[0]);
-		double y2 = Double.parseDouble(eq2[0]);
+		double x2 = (-1 * parseDouble(eq2[1])) / parseDouble(eq2[0]);
+		double y2 = parseDouble(eq2[0]);
 		System.out.println(x2 + " a " + y2);
 
 		System.out.println((y1 / x1) + " m " + (-1 * (y2 / x2)));
 
-		return ((y1 / x1) == (-1 * (y2 / x2))) ? true : false;
+		return (y1 / x1) == (-1 * (y2 / x2));
 
 
 	}
